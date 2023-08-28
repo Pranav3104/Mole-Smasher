@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: cursive;
+    background-color: black;
+    color: aliceblue;
+}
+
+h1{
+    text-align: center;
+    font-style: 5rem;
+    line-height: 1;
+    margin-top: 45px;
+}
+
+.score{
+    color: chartreuse;
+    background-color: #302f30;
+    padding: 1rem;
+    border-radius: 1rem;
+    display: inline-block;
+}
+
+.controls{
+    margin: 5px;
+    text-align: center;
+}
+
+.start-btn{
+    padding: 10px 25px;
+    outline: none;
+    font-style: 70px;
+    background-color: tomato;
+    color: aliceblue;
+    border: 0px;
+    box-shadow: 1px 2px 4px #ff8282;
+    cursor: pointer;
+    font-family: Times New Roman;
+}
+
+.start-btn:hover{
+    background-color: blue;
+    box-shadow: 1px 2px 4px #18c248b0;
+}
+
+.levels{
+    font-style: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.levels > div{
+    margin: 20px;
+}
+
+.levels > div:nth-of-type(1){
+    color: rgb(135, 208, 24);
+}
+.levels > div:nth-of-type(2){
+    color: rgb(250, 238, 7);
+}
+.levels > div:nth-of-type(3){
+    color: rgb(255, 47, 47);
+}
+
+.game{
+    width: 600px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.hole{
+    flex: 1 0 33.33%;
+    overflow: hidden;
+    position: relative;
+}
+
+.hole::after{
+    background: url("hole.jpg") bottom center no-repeat;
+    background-size: contain;
+    content: "";
+    width: 100%;
+    height: 70px;
+    position: absolute;
+    z-index: 2;
+    bottom: -30px;
+}
+
+.mole{
+    background: url("mole.jpg") bottom center no-repeat;
+    width: 100%;
+    height: 100%;
+    background-size: 75px;
+    position: absolute;
+    top: 100%;
+    transition: all 0.4s;
+    cursor: pointer;
+}
+
+.hole.up .mole{
+    top: 0;
+}
+
+@media(max-width: 768px){
+    h1{
+        padding: 20px;
+        font-style: 2rem;
+    }
+
+    .score{
+        margin: 20px;
+    }
+
+    .hole::after{
+        margin: 60px;
+    }
+
+    .start-btn{
+        padding: 8px 20px;
+    }
+
+    .levels > div{
+        margin: 10px;
+    }
+
+    .game{
+        width: 90%;
+        height: 300px;
+    }
+}
